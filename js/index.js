@@ -1,0 +1,5 @@
+
+ingresarNombre(ingreseSuNombre);
+validacionEdad(ingreseSuEdad);
+
+
