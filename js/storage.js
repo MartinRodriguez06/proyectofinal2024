@@ -114,3 +114,37 @@ function aplicarModo() {
   }
   // Llamado a la función aplicarModo cuando se carga la página
   document.addEventListener('DOMContentLoaded', aplicarModo);
+
+
+  
+const productos = [
+  {
+      nombre: "globos",
+      precio: 40,
+      stock: 100
+  },
+  {
+      nombre: "luces led",
+      precio: 400,
+      stock: 120
+  },
+  {
+      nombre: "gaseosas",
+      precio: 500,
+      stock: 1000
+  },
+  {
+      nombre: "sillas",
+      precio: 1000,
+      stock: 1000
+  }
+]
+
+const carrito = [];
+
+const guardarEnElLocalStorage = (key, value) => { localStorage.setItem(key, value) };
+
+carrito.push(productos[0]);
+carrito.push(productos[1]);
+
+guardarEnElLocalStorage("carrito", JSON.stringify(carrito));
