@@ -10,11 +10,11 @@ const enlaces = [
         nombre: "Inicio"
     },
     {
-        link: "products",
+        link: "productos",
         nombre: "Productos"
     },
     {
-        link: "contact",
+        link: "contacto",
         nombre: "Contacto"
     }    
 ]

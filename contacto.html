@@ -10,19 +10,23 @@
     </header>
 
     <main id="mainIndex">
-        <h1 id="titulo"> Todo lo que necesites para tus eventos, fiestas y reuniones!!</h1>
+        <h1 id="titulo"> !!Todo lo que necesites para tus eventos, fiestas y reuniones!!!</h1>
+        <h2 id="contactanos"> !!Contacta con nosotros para que no te falte nada!!!</h2>
 
         <div class="botonera">
             <input class="button_grey" id="modoClaro" type="button" value="Modo claro"  onclick="cambiarColorClaro()">
             <input class="button_grey" id="modoOscuro" type="button" value="Modo oscuro" onclick="cambiarColorOscuro()">
         </div>
 
-
         <form id="formulario">
             <input type="text">
+            
             <input type="text">
+            
             <input type="number">
+            
             <input type="email">
+            
             <input type="submit" value="Enviar" class="button_grey" >
         </form>
 
@@ -31,9 +35,17 @@
             <h4 id="apellido"></h4>
             <h4 id="edad"></h4>
             <h4 id="email"></h4>
+            <button id="borrarNombre">Eliminar Nombre</button>
+            <button id="borrarApellido">Eliminar Apellido</button>
+            <button id="borrarEdad">Eliminar Edad</button>
+            <button id="borrarEmail">Eliminar Email</button>
         </div>
+        <button class="button_grey" id="borrarLS">
+            Eliminar todo
+        </button>
     </main>
-
+    
+    
     <footer>
         <p> Comision #59950 | Proyecto JavaScript 2024</p>
     </footer>
@@ -46,17 +58,5 @@
 
     <script src="js/storage.js"></script>
 
-    <script>
-
-        function cambiarColorOscuro() {
-            document.body.style.backgroundColor = 'black';
-            document.getElementById('titulo').style.color = 'white';
-        }
-
-        function cambiarColorClaro() {
-            document.body.style.backgroundColor = 'white';
-            document.getElementById('titulo').style.color = 'black';
-        }
-    </script>
 </body>
 </html>
