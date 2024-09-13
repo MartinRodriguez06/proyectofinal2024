@@ -1,0 +1,102 @@
+[
+    {
+        "id_producto": 1,
+        "nombre": "Arabica",
+        "descripcion": "El más común y apreciado por su sabor suave y aromático, con menor acidez y amargor que otras variedades. El café Arabica se cultiva principalmente en regiones montañosas y tropicales, con climas cálidos y húmedos.",
+        "precio": 236,
+        "imagen": "img/arabica.png",
+        "stock": 100,
+        "categoria": {
+            "id_categoria": 1,
+            "nombre": "Granos de café Arabica",
+            "descripcion": "Granos de café de calidad"
+        }
+    },
+    
+
+    {
+        "id_producto": 2,
+        "nombre": "Robusta",
+        "descripcion": "Tiene un sabor más fuerte y amargo, con mayor contenido de cafeína. Es resistente a plagas y más barato de producir. El café Robusta se cultiva principalmente en regiones de clima cálido y tropical a menor altitud que el café Arabica.",
+        "precio": 300,
+        "imagen": "img/Grano-Robusta.jpg",
+        "stock": 100,
+        "categoria": {
+            "id_categoria": 2,
+            "nombre": "Granos de café Robusta",
+            "descripcion": "Granos de café de calidad"
+        }
+    },
+    
+
+    {
+        "id_producto": 3,
+        "nombre": "Liberica",
+        "descripcion": "Grano raro con un sabor único, afrutado y algo ahumado, cultivado en regiones limitadas de Asia y África.",
+        "precio": 200,
+        "imagen": "img/liberica.jpg",
+        "stock": 100,
+        "categoria": {
+            "id_categoria": 3,
+            "nombre": "Granos de café Liberica",
+            "descripcion": "Granos de café de calidad"
+        }
+    },
+
+    {
+        "id_producto": 4,
+        "nombre": "Excelsa",
+        "descripcion": " Una variedad de la familia Liberica, tiene un perfil de sabor agrio y afrutado. Se utiliza a menudo en mezclas.",
+        "precio": 150,
+        "imagen": "img/excelsa.jpg",
+        "stock": 100,
+        "categoria": {
+            "id_categoria": 4,
+            "nombre": "Granos de café Excelsa",
+            "descripcion": "Granos de café de calidad"
+        }
+    },
+
+    {
+        "id_producto": 5,
+        "nombre": "Bourbon",
+        "descripcion": "Una variedad de Arabica, conocida por su dulzura y acidez balanceada, con notas de chocolate y frutas.",
+        "precio": 400,
+        "imagen": "img/bourbon.png",
+        "stock": 100,
+        "categoria": {
+            "id_categoria": 5,
+            "nombre": "Granos de café Bourbon",
+            "descripcion": "Granos de café de calidad"
+        }
+    },
+
+    {
+        "id_producto": 6,
+        "nombre": "Geisha",
+        "descripcion": "Famosa por su perfil complejo, floral y afrutado. Originaria de Etiopía, pero popular en América Central.",
+        "precio": 200,
+        "imagen": "img/geisha.jpg",
+        "stock": 100,
+        "categoria": {
+            "id_categoria": 6,
+            "nombre": "Granos de café Geisha",
+            "descripcion": "Granos de café de calidad"
+        }
+    },
+
+    {
+        "id_producto": 7,
+        "nombre": "Pacamara",
+        "descripcion": "Híbrido entre Pacas y Maragogipe, ofrece granos grandes con un perfil de sabor afrutado y complejo.",
+        "precio": 300,
+        "imagen": "img/pacamara.jpg",
+        "stock": 100,
+        "categoria": {
+            "id_categoria": 7,
+            "nombre": "Granos de café Pacamara",
+            "descripcion": "Granos de café de calidad"
+        }
+    }
+
+]
