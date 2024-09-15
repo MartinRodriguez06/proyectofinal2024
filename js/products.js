@@ -1,4 +1,4 @@
-// Función para obtener los productos desde el archivo JSON
+
 async function obtenerProductos() {
     try {
         const response = await fetch('cafe.json');
@@ -10,27 +10,27 @@ async function obtenerProductos() {
             precio: producto.precio,
             imagen: producto.imagen,
             stock: producto.stock,
-            categoria: producto.categoria ? producto.categoria.nombre : 'Sin categoría' // Acceder al nombre de la categoría
+            categoria: producto.categoria ? producto.categoria.nombre : 'Sin categoría' 
         }));
     } catch (error) {
         console.error('Error al obtener productos:', error);
     }
 }
 
-// Renderizar los productos en el HTML
+
 function renderizarProductos(productosFiltrados = []) {
     const productList = document.getElementById('product-list');
-    productList.innerHTML = ''; // Limpiar el contenido previo
+    productList.innerHTML = ''; 
 
-    // Crear un contenedor 'row' de Bootstrap para las tarjetas
+    
     const rowDiv = document.createElement('div');
-    rowDiv.classList.add('row', 'gy-4'); // 'gy-4' añade espacio vertical entre filas
+    rowDiv.classList.add('row', 'gy-4'); 
 
     productosFiltrados.forEach(producto => {
         const productoDiv = document.createElement('div');
-        productoDiv.classList.add('col-md-4'); // Clases Bootstrap para columnas (3 tarjetas por fila en pantallas medianas)
+        productoDiv.classList.add('col-md-4'); 
 
-        // Crear la estructura de la card
+      
         productoDiv.innerHTML = `
             <div class="card h-100">
                 <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
@@ -49,15 +49,15 @@ function renderizarProductos(productosFiltrados = []) {
             </div>
         `;
 
-        // Añadir la tarjeta al contenedor de filas
+
         rowDiv.appendChild(productoDiv);
     });
 
-    // Añadir el contenedor de filas al contenedor de productos
+  
     productList.appendChild(rowDiv);
 }
 
-// Agregar un producto al carrito
+
 function agregarAlCarrito(productoID) {
     const producto = productos.find(p => p.id === productoID);
 
@@ -75,7 +75,7 @@ function agregarAlCarrito(productoID) {
     localStorage.setItem("Cart", JSON.stringify(carrito));
 }
 
-// Filtrar productos al buscar
+
 function buscarProductos(textoBusqueda) {
     const productosFiltrados = productos.filter(producto => 
         producto.nombre.toLowerCase().includes(textoBusqueda.toLowerCase())
@@ -83,7 +83,7 @@ function buscarProductos(textoBusqueda) {
     renderizarProductos(productosFiltrados);
 }
 
-// Event listeners
+
 document.getElementById('buscador-input').addEventListener('input', function() {
     const textoBusqueda = this.value;
     buscarProductos(textoBusqueda);
@@ -106,7 +106,7 @@ document.getElementById('clear-cart').addEventListener('click', () => {
     });
 });
 
-// Inicializar los productos y el carrito
+
 let productos = [];
 let carrito = [];
 

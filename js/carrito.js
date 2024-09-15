@@ -1,4 +1,4 @@
-// Función para obtener los productos desde el archivo JSON
+
 async function obtenerProductos() {
     try {
         const response = await fetch('cafe.json');
@@ -17,16 +17,15 @@ async function obtenerProductos() {
     }
 }
 
-// Renderizar los productos en el carrito
 function renderizarCarrito(productosCarrito) {
     const cartList = document.getElementById('cart-list');
-    cartList.innerHTML = ''; // Limpiar el contenido previo
+    cartList.innerHTML = ''; 
 
     productosCarrito.forEach(producto => {
         const productoDiv = document.createElement('div');
-        productoDiv.classList.add('col-md-4'); // Asegúrate de usar la misma clase para columnas
+        productoDiv.classList.add('col-md-4'); 
         productoDiv.innerHTML = `
-            <div class="card h-100"> <!-- Asegúrate de usar las mismas clases -->
+            <div class="card h-100">
                 <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
                 <div class="card-body">
                     <h5 class="card-title">${producto.nombre}</h5>
@@ -37,13 +36,48 @@ function renderizarCarrito(productosCarrito) {
                     <li class="list-group-item">Stock: ${producto.stock}</li>
                     <li class="list-group-item">Categoría: ${producto.categoria}</li>
                 </ul>
+                <div class="card-footer">
+                    <button class="btn btn-danger btn-sm eliminar-producto" data-id="${producto.id}" data-instance="${producto.instanceId}">Eliminar</button>
+                </div>
             </div>
         `;
         cartList.appendChild(productoDiv);
     });
+
+    
+    document.querySelectorAll('.eliminar-producto').forEach(button => {
+        button.addEventListener('click', (event) => {
+            const id = parseInt(event.target.getAttribute('data-id'), 10);
+            const instanceId = event.target.getAttribute('data-instance'); 
+            eliminarProducto(id, instanceId);
+        });
+    });
 }
 
-// Vaciar el carrito
+function eliminarProducto(id, instanceId) {
+    Swal.fire({
+        title: "¿Estás seguro de eliminar este producto?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Sí, eliminar"
+    }).then((result) => {
+        if (result.isConfirmed) {
+        
+            carrito = carrito.filter(producto => !(producto.id === id && producto.instanceId === instanceId));
+
+           
+            localStorage.setItem("Cart", JSON.stringify(carrito));
+
+            
+            renderizarCarrito(carrito);
+
+            Swal.fire("Producto eliminado", "El producto ha sido eliminado del carrito.", "success");
+        }
+    });
+}
+
 function vaciarCarrito() {
     Swal.fire({
         title: "¿Estás seguro de vaciar el carrito?",
@@ -56,19 +90,33 @@ function vaciarCarrito() {
         if (result.isConfirmed) {
             carrito = [];
             localStorage.removeItem("Cart");
-            Swal.fire("Carrito vacío", "El carrito ha sido vaciado.", "success");
             renderizarCarrito(carrito);
+            Swal.fire("Carrito vacío", "El carrito ha sido vaciado.", "success");
         }
     });
 }
 
-// Inicializar el carrito
+
 let carrito = JSON.parse(localStorage.getItem("Cart")) || [];
 document.addEventListener("DOMContentLoaded", async () => {
     const productos = await obtenerProductos();
-    carrito = carrito.map(item => productos.find(p => p.id === item.id));
+   
+    carrito = carrito.map(item => {
+        const producto = productos.find(p => p.id === item.id);
+        return producto ? { ...producto, instanceId: item.instanceId || generateUniqueId() } : null;
+    }).filter(p => p !== null);
     renderizarCarrito(carrito);
 });
 
 document.getElementById('clear-cart').addEventListener('click', vaciarCarrito);
+
+
+function generateUniqueId() {
+    return '_' + Math.random().toString(36).substr(2, 9);
+}
+
+
+
+
+
 

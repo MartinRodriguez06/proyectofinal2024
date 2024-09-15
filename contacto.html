@@ -9,60 +9,58 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header id="header">
-    </header>
+    <header id="header"></header>
 
     <main id="mainContacto" class="main-content">
-        <h1 id="titulo"> InfoCafé - Todo lo que necesitas saber</h1>
-        <h2 id="contactanos"> !!Contacta con nosotros!!</h2>
+        <h1 id="titulo" class="titulo-cafe">InfoCafé - Todo lo que necesitas saber</h1>
+        <h2 id="contactanos" class="titulo-cafe">!!Contacta con nosotros!!</h2>
 
         <div class="botonera">
             <button id="toggle-button">Cambiar a Modo Oscuro</button>
         </div>
 
-        <form id="formulario">
-            <input type="text">
-            
-            <input type="text">
-            
-            <input type="number">
-            
-            <input type="email">
-            
-            <input type="submit" value="Enviar" class="button_grey" >
-        </form>
-
-        <div>
-            <h4 id="nombre"></h4>
-            <h4 id="apellido"></h4>
-            <h4 id="edad"></h4>
-            <h4 id="email"></h4>
-            <button id="borrarNombre">Eliminar Nombre</button>
-            <button id="borrarApellido">Eliminar Apellido</button>
-            <button id="borrarEdad">Eliminar Edad</button>
-            <button id="borrarEmail">Eliminar Email</button>
+        <div class="form-container">
+            <form id="formulario">
+                <input type="text" placeholder="Nombre">
+                <input type="text" placeholder="Apellido">
+                <input type="number" placeholder="Edad">
+                <input type="email" placeholder="Email">
+                <input type="submit" value="Enviar" class="button_grey">
+            </form>
         </div>
-        <button class="button_grey" id="borrarLS">
-            Eliminar todo
-        </button>
+
+        <div class="info-container">
+            <h3 class="info-title">Tu Información de Contacto</h3>
+            <div class="info-item">
+                <span id="nombre"></span>
+                <button id="borrarNombre" class="btn btn-danger btn-sm">Eliminar Nombre</button>
+            </div>
+            <div class="info-item">
+                <span id="apellido"></span>
+                <button id="borrarApellido" class="btn btn-danger btn-sm">Eliminar Apellido</button>
+            </div>
+            <div class="info-item">
+                <span id="edad"></span>
+                <button id="borrarEdad" class="btn btn-danger btn-sm">Eliminar Edad</button>
+            </div>
+            <div class="info-item">
+                <span id="email"></span>
+                <button id="borrarEmail" class="btn btn-danger btn-sm">Eliminar Email</button>
+            </div>
+            <div class="btn-container">
+                <button class="btn btn-danger btn-sm" id="borrarLS">Eliminar todo</button>
+            </div>
+        </div>
+        
     </main>
-    
-    
-    <footer id="footer">
 
-    </footer>
+    <footer id="footer"></footer>
 
-
-<!--Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<script src="js/navegacion.js"></script>
-<script src="js/darkmode.js"></script>
-<script src="js/footer.js"></script>
-<script src="js/functions.js"></script>
-
-    <script src="js/index.js"></script>
-
-    <script src="js/storage.js"></script>
-
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="js/navegacion.js"></script>
+    <script src="js/darkmode.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/form.js"></script>
 </body>
 </html>
